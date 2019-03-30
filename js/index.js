@@ -1,3 +1,6 @@
-const Web3 = require('web3');
-const abiDecoder = require('abi-decoder');
-
+// web3js configuration
+if (typeof web3 !== 'undefined')  {
+	web3 = new Web3(web3.currentProvider);
+} else {
+	web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+}
