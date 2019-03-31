@@ -22,8 +22,8 @@
               <span class="glyphicon glyphicon-send"></span> I'm on Track</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#" data-toggle="modal" data-target="#myModalHorizontal" >Add task</a></li>
+          <li class="active"><a href="kanban.html">Dashboard</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#addTheme" >Add New Theme</a></li>
         </ul>
       </div>
     </nav>
@@ -70,8 +70,8 @@
 
     </div> <!-- /.container -->
 
-      <!-- Add Task Modal Box -->
-      <div class="modal" id="myModalHorizontal" tabindex="-1" role="dialog" 
+      <!-- Add Theme Modal Box -->
+      <div class="modal" id="addTheme" tabindex="-1" role="dialog" 
         aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -83,7 +83,7 @@
               <span class="sr-only">Close</span>
               </button>
               <h4 class="modal-title" id="myModalLabel">
-                Add Task
+                Add New Theme
               </h4>
             </div>
             <!-- Modal Body -->
@@ -94,21 +94,25 @@
                   <input type="text" class="form-control" placeholder="Enter task name"  id="task_title" name="task_title">
                   <label for="task_title">Wager Amount:</label>
                   <input type="text" class="form-control" placeholder="Enter appropriate wager amount"  id="task_title" name="task_title">
-                  <label for="due_date">Due Date:</label>
-                  <input type="text" class="form-control" placeholder="dd/mm/yyyy" id="due_date" name="due_date">
-                
                 </div>
+              </form>
                 <div class="form-group">
-                  <label for="task_details">Milestones:</label>
-                  <textarea class="form-control"  placeholder="Add Milestone" id="task_details" name="task_details"></textarea>
+                    <label for="task_details">Milestones:</label>
+                    <form role="form" id="milestones" autocomplete="off">
+                        <input type="text" class="form-control" placeholder="Enter a SMART milestone description" name="description">
+                        <input type="text" class="form-control" placeholder="Enter Due date" id="due_date" name="due_date">
+                
+                        <button type="button" class="btn btn btn-success" id="milestone_button">Add</button>
+                    </form>
+                    <ul id="milestones_buffer">
+                    </ul>
                 </div>
 
-                <button type="submit" name="submit" id="submit" class="btn btn-primary">Submit</button>
-              </form>
             </div>
             <!-- Modal Footer -->
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger"
+                <button type="submit" name="submit" id="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-danger"
                 data-dismiss="modal">
               Close
               </button>
@@ -146,7 +150,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
 
     <script src="./js/abi.js"></script>
-    <script src="./config.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/ui.js"></script>
 </html>
