@@ -8,7 +8,8 @@ if (typeof web3 !== 'undefined')  {
 } else {
 	web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 }
-web3.eth.defaultAccount = web3.eth.accounts[0];
+sys_acc = web3.eth.accounts[0];
+usr_acc = web3.eth.defaultAccount = web3.eth.accounts[1];
 abiDecoder.addABI(abi);
 var GoalTrackerContractSpec = web3.eth.contract(abi);
 var gt = GoalTrackerContractSpec.at(contractAddress)

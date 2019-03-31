@@ -1,7 +1,7 @@
-var contractAddress = "0xe28ecdd5a4ad5d3e83fbcf838461efbfd57e03fb";
+var contractAddress = "0xcb72daf8e18029258433f43c183b5af59317a0f3";
 var debugging;
 var abi = 
-    [
+[
 	{
 		"constant": false,
 		"inputs": [
@@ -18,60 +18,6 @@ var abi =
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_wager",
-				"type": "uint256"
-			},
-			{
-				"name": "_description",
-				"type": "string"
-			},
-			{
-				"name": "_goals",
-				"type": "uint256[]"
-			},
-			{
-				"name": "_lossDonationPercent",
-				"type": "uint256"
-			}
-		],
-		"name": "addTheme",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getGoalCount",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getThemeCount",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -111,6 +57,46 @@ var abi =
 	},
 	{
 		"constant": true,
+		"inputs": [],
+		"name": "getGoalCount",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_wager",
+				"type": "uint256"
+			},
+			{
+				"name": "_description",
+				"type": "string"
+			},
+			{
+				"name": "_goals",
+				"type": "uint256[]"
+			},
+			{
+				"name": "_lossDonationPercent",
+				"type": "uint256"
+			}
+		],
+		"name": "addTheme",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
 		"inputs": [
 			{
 				"name": "",
@@ -137,6 +123,43 @@ var abi =
 			},
 			{
 				"name": "lossDonationPercent",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_user",
+				"type": "address"
+			},
+			{
+				"name": "_theme",
+				"type": "uint256"
+			}
+		],
+		"name": "getGoals",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getThemeCount",
+		"outputs": [
+			{
+				"name": "",
 				"type": "uint256"
 			}
 		],
