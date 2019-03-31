@@ -65,12 +65,12 @@ function submitMilestones(){
     return goal_ids;
 }
 
-function toUNIXtime(date){
-    return new Date(date).getTime()/1000;
-}
 
-function fromUNIXtime(time){
-    return new Date(time*1000);
+function toUNIXtime(date){
+    return new Date(date).getTime() / 1000;
 }
+ function fromUNIXtime(time){
+     return new Date(time*1000);
+ }
 
 
