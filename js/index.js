@@ -73,12 +73,12 @@ function fromUNIXtime(time){
 }
 
 
-function populateThemes(themeName, wager, goals, goals2, date, date2, proofUrl, addproof){
+function populateThemes(themeName, wager, goals, date){
     // append to panel-group,  opener + themeName + divstring +populateMilestones(goals) + closeDiv
 newTheme = '<div class="col-md-3 panelspace"><div class="panel panel-default"><div class="panel-heading">'
          + themeName + '<span class="badge badge-pill badge progress-bar-dark"> €' 
         + wager + '</span></div><div class="panel-body"><ul class="list-group">' 
-        + populateMilestones(goals, goals2, date, date2, proofUrl, addproof) + '</ul></div>';
+        + populateMilestones(goals, date) + '</ul></div>';
 
       $("#allThemes").append(newTheme);
 }
@@ -87,7 +87,7 @@ function populateMilestones(goals, date){
 return '<li class="list-group-item"><div class="card" style="width: 18rem;"><div class="card-body"><h5 class="card-title">'
                 + goals + '<span class="badge badge-pill badge progress-bar-info">' 
                 + date 
-                + '</span>/h5>' + '<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6><button type="button" class="btn btn-success" data-toggle="modal" data-target="#addProofModal">'
+                + '</span></h5>'
                 + '<button type="button" class="btn btn-success" data-toggle="modal" data-target="#addProofModal">' 
                 + 'Add Proof URL'
                 + '</button></div></li>';

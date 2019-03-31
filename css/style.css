@@ -6,3 +6,9 @@ body {
 .row {
     margin-top: 25px;
 }
+
+#block {
+    position: relative;
+    left: 500px;
+    top: 100px;
+}
