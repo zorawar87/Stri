@@ -1,6 +1,7 @@
 debugging = false; //true to see console messages
 _gasLimit = 200000;
 
+
 // web3js configuration
 if (typeof web3 !== 'undefined')  {
 	web3 = new Web3(web3.currentProvider);
@@ -84,3 +85,14 @@ function popoulateThemes(themeName, goals){
 function populateMilestones(goals){
 
 }
+
+$('#url_button').click(function(){
+    $('#url_button').parent().parent().addClass('bg-info');
+});
+
+
+// $("url_button").click(function(){
+//     var color = clicked ? 'red' : 'blue';
+//     $("ul").css('background-color', red);
+//     clicked = !clicked;
+// });
