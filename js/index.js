@@ -1,5 +1,5 @@
 debugging = false; //true to see console messages
-_gasLimit = 200000;
+_gasLimit = 300000;
 
 
 // web3js configuration
@@ -14,7 +14,7 @@ abiDecoder.addABI(abi);
 var GoalTrackerContractSpec = web3.eth.contract(abi);
 var gt = GoalTrackerContractSpec.at(contractAddress)
 
-tx_param = {from: web3.eth.defaultAccount, gas: _gasLimit};
+tx_param = {from: usr_acc, gas: _gasLimit};
 
 milestones_buffer = new Set(); 
 
@@ -43,19 +43,14 @@ function addTheme(){
     }
     goalIds = submitMilestones();
 
-    let formData = new FormData(document.getElementById("milestones"));
-    if (formData.get("description") == "" && formData.get("due_date") == "") return;
+    formData = new FormData(document.getElementById("theme_form"));
+    if (formData.get("wager") == "" && formData.get("theme_title") == "") return;
 
-    milestones_buffer.add({
-        description: formData.get("description"),
-        due: toUNIXtime(formData.get("due_date"))
-    });
+    gt.addTheme(formData.get("wager"), formData.get("theme_title"), goalIds, 10, tx_param);
 
-    $(':input','#milestones')
+    $(':input','#theme_form')
         .not(':button, :submit, :reset, :hidden')
         .val('');
-
-    gt.addTheme()
 }
 
 function submitMilestones(){
@@ -65,7 +60,7 @@ function submitMilestones(){
         goal_ids.push(gt.getGoalCount().toNumber());
     }); 
     milestones_buffer.clear();
-    $("#milestone_button").empty();
+    $("#milestones_buffer").empty();
     return goal_ids;
 }
 
