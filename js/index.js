@@ -66,7 +66,7 @@ function submitMilestones(){
     milestones_buffer.clear();
     $("#milestone_button").empty();
     return goal_ids;
-l
+}
 
 function toUNIXtime(date){
     return new Date(date).getTime()/1000;
@@ -84,25 +84,16 @@ newTheme = '<div class="col-md-3 panelspace"><div class="panel panel-default"><d
         + wager + '</span></div><div class="panel-body"><ul class="list-group">' 
         + populateMilestones(goals, goals2, date, date2, proofUrl, addproof) + '</ul></div>';
 
-
       $("#allThemes").append(newTheme);
 }
 
-function populateMilestones(goals, goals2, date, date2, proofUrl, addproof){
-newMilestone = '<li class="list-group-item"><div class="card" style="width: 18rem;"><div class="card-body"><h5 class="card-title">'
+function populateMilestones(goals, date){
+return '<li class="list-group-item"><div class="card" style="width: 18rem;"><div class="card-body"><h5 class="card-title">'
                 + goals + '<span class="badge badge-pill badge progress-bar-info">' 
                 + date 
                 + '</span>/h5>' + '<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6><button type="button" class="btn btn-success" data-toggle="modal" data-target="#addProofModal">'
                 + '<button type="button" class="btn btn-success" data-toggle="modal" data-target="#addProofModal">' 
-                + proofUrl
-                + '</button></div></li>'
-                + '<li class="list-group-item"><div class="card" style="width: 18rem;"><div class="card-body"><h5 class="card-title">'
-                + goals2
-                + '<span class="badge badge-pill progress-bar-info">'
-                + date2
-                + '</span></h5>'
-                + '<a onclick="addProof(this)" class="card-link">'
-                + addProof
-                + '</a></div></li></ul></div></div>'
+                + 'Add Proof URL'
+                + '</button></div></li>';
 
 }
