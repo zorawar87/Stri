@@ -1,4 +1,4 @@
-$("input[type='text']").keypress(function(event){
+$("#text").keypress(function(event){
     if(event.which === 13){
        var goalText = $(this).val();
        //clear the input afterwards
@@ -9,7 +9,7 @@ $("input[type='text']").keypress(function(event){
     }
 });
 
-$("input[type='number']").keypress(function(event){
+$("#value").keypress(function(event){
     if(event.which === 13){
        var goalValue = $(this).val();
        //clear the input afterwards
@@ -19,3 +19,22 @@ $("input[type='number']").keypress(function(event){
 
     }
 });
+
+// //Kategorie hinzufügen
+// $("#text").keypress(grab);
+// //Zahlenwert hinzufügen
+// $("#value").keypress(grab);
+
+// function grab(event){
+// 	if(event.which === 13){
+// 		var goalValue =$("#text").val();
+// 		var goalText =$("#number").val();
+// 		if(goalValue == "" || goalText == ""){
+// 			alert("Please fill out both!");
+// 		} else {
+// 			$("#value").val("");
+// 			$("#text").val("Milestone");
+// 			$("ul").append("<li> " + goalText + "<span class='betrag'>" + goalValue + "€</span></li>")
+// 		}
+// 	} 
+// }
