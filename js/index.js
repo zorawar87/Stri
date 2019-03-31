@@ -18,7 +18,7 @@ milestones_buffer = new Set();
 $('#milestone_button').click(addMilestone);
 function addMilestone() {
     let formData = new FormData(document.getElementById("milestones"));
-    milestones_buffer.push({
+    milestones_buffer.add({
         desc: formData.get("description"),
         due: formData.get("due_date")
     });
