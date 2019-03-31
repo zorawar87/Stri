@@ -77,22 +77,32 @@ function fromUNIXtime(time){
 }
 
 
-function popoulateThemes(themeName, goals){
-    // append to panel-group,  divstring + themeName + divstring +populateMilestones(goals) + closeDiv
+function populateThemes(themeName, wager, goals, goals2, date, date2, proofUrl, addproof){
+    // append to panel-group,  opener + themeName + divstring +populateMilestones(goals) + closeDiv
+newTheme = '<div class="col-md-3 panelspace"><div class="panel panel-default"><div class="panel-heading">'
+         + themeName + '<span class="badge badge-pill badge progress-bar-dark"> €' 
+        + wager + '</span></div><div class="panel-body"><ul class="list-group">' 
+        + populateMilestones(goals, goals2, date, date2, proofUrl, addproof) + '</ul></div>';
 
+
+      $("#allThemes").append(newTheme);
 }
 
-function populateMilestones(goals){
+function populateMilestones(goals, goals2, date, date2, proofUrl, addproof){
+newMilestone = '<li class="list-group-item"><div class="card" style="width: 18rem;"><div class="card-body"><h5 class="card-title">'
+                + goals + '<span class="badge badge-pill badge progress-bar-info">' 
+                + date 
+                + '</span>/h5>' + '<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6><button type="button" class="btn btn-success" data-toggle="modal" data-target="#addProofModal">'
+                + '<button type="button" class="btn btn-success" data-toggle="modal" data-target="#addProofModal">' 
+                + proofUrl
+                + '</button></div></li>'
+                + '<li class="list-group-item"><div class="card" style="width: 18rem;"><div class="card-body"><h5 class="card-title">'
+                + goals2
+                + '<span class="badge badge-pill progress-bar-info">'
+                + date2
+                + '</span></h5>'
+                + '<a onclick="addProof(this)" class="card-link">'
+                + addProof
+                + '</a></div></li></ul></div></div>'
 
 }
-
-$('#url_button').click(function(){
-    $('#url_button').parent().parent().addClass('bg-info');
-});
-
-
-// $("url_button").click(function(){
-//     var color = clicked ? 'red' : 'blue';
-//     $("ul").css('background-color', red);
-//     clicked = !clicked;
-// });
