@@ -1,4 +1,4 @@
-var contractAddress = "0x954d55893d4003207eab74ed1d836ba82603c25f";
+var contractAddress = "0x3622dd076d1f8e44494d21a82d8522e3a60cf517";
 var debugging;
 var abi = 
 [
@@ -165,6 +165,24 @@ var abi =
 		],
 		"payable": false,
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_goalId",
+				"type": "uint256"
+			},
+			{
+				"name": "url",
+				"type": "string"
+			}
+		],
+		"name": "addProof",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]
